@@ -14,6 +14,6 @@ function is_prime($number) {
 }
 
 for ($i=0; $i<10; $i++) {
-    $num = rand(6, 12);
+    $num = rand(-100, 1000);
     echo 'Is '.$num.' prime: '. json_encode(is_prime($num)).' <br>';
 }
