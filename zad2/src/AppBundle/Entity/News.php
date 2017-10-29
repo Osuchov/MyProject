@@ -49,23 +49,12 @@ class News
         $this->creationDate = (new DateTime());
     }
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
+
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Set title
-     *
-     * @param string $title
-     *
-     * @return News
-     */
     public function setTitle($title)
     {
         $this->title = $title;
@@ -73,23 +62,11 @@ class News
         return $this;
     }
 
-    /**
-     * Get title
-     *
-     * @return string
-     */
     public function getTitle()
     {
         return $this->title;
     }
 
-    /**
-     * Set content
-     *
-     * @param string $content
-     *
-     * @return News
-     */
     public function setContent($content)
     {
         $this->content = $content;
@@ -97,21 +74,11 @@ class News
         return $this;
     }
 
-    /**
-     * Get content
-     *
-     * @return string
-     */
     public function getContent()
     {
         return $this->content;
     }
 
-    /**
-     * Get creationDate
-     *
-     * @return \DateTime
-     */
     public function getCreationDate()
     {
         return $this->creationDate;

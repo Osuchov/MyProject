@@ -35,7 +35,7 @@ class NewsController extends Controller
     /**
      * Creates a new news entity.
      *
-     * @Route("/new", name="news_new")
+     * @Route("/new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
@@ -61,7 +61,7 @@ class NewsController extends Controller
     /**
      * Finds and displays a news entity.
      *
-     * @Route("/{id}", name="news_show")
+     * @Route("/{id}")
      * @Method("GET")
      */
     public function showAction(News $news)
@@ -77,7 +77,7 @@ class NewsController extends Controller
     /**
      * Displays a form to edit an existing news entity.
      *
-     * @Route("/{id}/edit", name="news_edit")
+     * @Route("/{id}/edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, News $news)
@@ -95,14 +95,14 @@ class NewsController extends Controller
         return $this->render('news/edit.html.twig', array(
             'news' => $news,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $deleteForm->createView()
         ));
     }
 
     /**
      * Deletes a news entity.
      *
-     * @Route("/{id}", name="news_delete")
+     * @Route("/{id}")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, News $news)
@@ -121,17 +121,12 @@ class NewsController extends Controller
 
     /**
      * Creates a form to delete a news entity.
-     *
-     * @param News $news The news entity
-     *
-     * @return \Symfony\Component\Form\Form The form
      */
     private function createDeleteForm(News $news)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('news_delete', array('id' => $news->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }
