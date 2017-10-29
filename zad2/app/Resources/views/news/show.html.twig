@@ -18,7 +18,7 @@
                 <td>{{ news.content }}</td>
             </tr>
             <tr>
-                <th>Creationdate</th>
+                <th>Creation Date</th>
                 <td>{% if news.creationDate %}{{ news.creationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
         </tbody>
@@ -26,10 +26,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('news_index') }}">Back to the list</a>
+            <a href="{{ path('news_index') }}"><button>Back to All News</button></a>
         </li>
         <li>
-            <a href="{{ path('news_edit', { 'id': news.id }) }}">Edit</a>
+            <a href="{{ path('news_edit', { 'id': news.id }) }}"><button>Edit</button></a>
         </li>
         <li>
             {{ form_start(delete_form) }}

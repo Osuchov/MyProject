@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use DateTime;
 
 /**
  * News
@@ -42,6 +43,11 @@ class News
      */
     private $creationDate;
 
+
+    public function __construct()
+    {
+        $this->creationDate = (new DateTime());
+    }
 
     /**
      * Get id
@@ -99,20 +105,6 @@ class News
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Set creationDate
-     *
-     * @param \DateTime $creationDate
-     *
-     * @return News
-     */
-    public function setCreationDate($creationDate)
-    {
-        $this->creationDate = $creationDate;
-
-        return $this;
     }
 
     /**

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>News list</h1>
+    <h1>All News</h1>
 
     <table>
         <thead>
@@ -9,7 +9,7 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Content</th>
-                <th>Creationdate</th>
+                <th>Creation Date</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -23,10 +23,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('news_show', { 'id': news.id }) }}">show</a>
+                            <a href="{{ path('news_show', { 'id': news.id }) }}"><button>show</button></a>
                         </li>
                         <li>
-                            <a href="{{ path('news_edit', { 'id': news.id }) }}">edit</a>
+                            <a href="{{ path('news_edit', { 'id': news.id }) }}"><button>edit</button></a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('news_new') }}">Create a new news</a>
+            <a href="{{ path('news_new') }}"><button>Create new news thread</button></a>
         </li>
     </ul>
 {% endblock %}
