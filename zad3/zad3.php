@@ -50,6 +50,7 @@ function checkWins(array $combinations, array $results) {
         if (isset($results[$combination])) {    //if there is a key that matches our combination
             ++$counter;                         //increase the counter and echo the combination
             echo $counter . ' Win! Combination: '. $combination .'<br>';
+            continue;
         }
     }
     return $counter;
